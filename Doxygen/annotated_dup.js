@@ -1,0 +1,26 @@
+var annotated_dup =
+[
+    [ "ChoixCompte", "class_choix_compte.html", "class_choix_compte" ],
+    [ "Composite", "class_composite.html", "class_composite" ],
+    [ "Compte", "class_compte.html", "class_compte" ],
+    [ "CompteFactory", "class_compte_factory.html", "class_compte_factory" ],
+    [ "CompteFeuille", "class_compte_feuille.html", "class_compte_feuille" ],
+    [ "CompteItem", "class_compte_item.html", "class_compte_item" ],
+    [ "CompteRacine", "class_compte_racine.html", "class_compte_racine" ],
+    [ "CompteStrategy", "class_compte_strategy.html", "class_compte_strategy" ],
+    [ "CompteVirtuel", "class_compte_virtuel.html", "class_compte_virtuel" ],
+    [ "creerCompteDialog", "classcreer_compte_dialog.html", "classcreer_compte_dialog" ],
+    [ "Deficit", "class_deficit.html", "class_deficit" ],
+    [ "Excedent", "class_excedent.html", "class_excedent" ],
+    [ "fenetreRapprochement", "classfenetre_rapprochement.html", "classfenetre_rapprochement" ],
+    [ "MainWindow", "class_main_window.html", "class_main_window" ],
+    [ "Operations", "class_operations.html", "class_operations" ],
+    [ "Resultat", "class_resultat.html", "class_resultat" ],
+    [ "SauvegardeXML", "class_sauvegarde_x_m_l.html", "class_sauvegarde_x_m_l" ],
+    [ "StrategyAD", "class_strategy_a_d.html", "class_strategy_a_d" ],
+    [ "StrategyPR", "class_strategy_p_r.html", "class_strategy_p_r" ],
+    [ "Transaction", "class_transaction.html", "class_transaction" ],
+    [ "TransactionItem", "class_transaction_item.html", "class_transaction_item" ],
+    [ "TransactionManager", "class_transaction_manager.html", "class_transaction_manager" ],
+    [ "TripletTransaction", "class_triplet_transaction.html", "class_triplet_transaction" ]
+];
