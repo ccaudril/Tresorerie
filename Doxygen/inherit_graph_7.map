@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_compte_strategy.html" title="Classe abstraite, mère des classes StrategyAD et StrategyPR. " alt="" coords="5,31,123,57"/>
+<area shape="rect" id="node2" href="$class_strategy_a_d.html" title="Classe fille héritant de CompteStrategy. " alt="" coords="171,5,261,32"/>
+<area shape="rect" id="node3" href="$class_strategy_p_r.html" title="Classe fille héritant de CompteStrategy. " alt="" coords="171,56,261,83"/>
+</map>
