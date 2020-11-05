@@ -1,0 +1,5 @@
+<map id="CompteFeuille" name="CompteFeuille">
+<area shape="rect" id="node4" href="$class_compte_strategy.html" title="Classe abstraite, mère des classes StrategyAD et StrategyPR. " alt="" coords="20,1013,165,1149"/>
+<area shape="rect" id="node2" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="20,307,165,707"/>
+<area shape="rect" id="node3" href="$class_composite.html" title="Classe non instanciable mère de CompteRacine et CompteVirtuel. " alt="" coords="5,5,180,244"/>
+</map>

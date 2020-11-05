@@ -1,0 +1,4 @@
+<map id="Excedent" name="Excedent">
+<area shape="rect" id="node2" href="$class_compte_feuille.html" title="Classe instanciable représentant les Comptes sur lesquels sont effectuées des Transaction. " alt="" coords="5,468,151,663"/>
+<area shape="rect" id="node3" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="5,5,151,420"/>
+</map>

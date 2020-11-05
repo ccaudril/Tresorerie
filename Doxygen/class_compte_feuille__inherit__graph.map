@@ -1,0 +1,6 @@
+<map id="CompteFeuille" name="CompteFeuille">
+<area shape="rect" id="node3" href="$class_deficit.html" title="Compte unique utilisé pour les clotûres. " alt="" coords="5,711,104,803"/>
+<area shape="rect" id="node4" href="$class_excedent.html" title="Compte unique utilisé pour les clotûres. " alt="" coords="128,711,243,803"/>
+<area shape="rect" id="node5" href="$class_resultat.html" title="Compte unique utilisé pour les clotûres. " alt="" coords="267,711,376,803"/>
+<area shape="rect" id="node2" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="113,5,258,420"/>
+</map>

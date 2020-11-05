@@ -1,0 +1,5 @@
+<map id="CompteStrategy" name="CompteStrategy">
+<area shape="rect" id="node2" href="$class_compte_feuille.html" title="Classe instanciable représentant les Comptes sur lesquels sont effectuées des Transaction. " alt="" coords="92,769,237,964"/>
+<area shape="rect" id="node3" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="175,307,320,707"/>
+<area shape="rect" id="node4" href="$class_composite.html" title="Classe non instanciable mère de CompteRacine et CompteVirtuel. " alt="" coords="160,5,335,244"/>
+</map>

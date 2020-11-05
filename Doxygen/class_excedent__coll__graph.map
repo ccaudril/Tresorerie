@@ -1,0 +1,6 @@
+<map id="Excedent" name="Excedent">
+<area shape="rect" id="node2" href="$class_compte_feuille.html" title="Classe instanciable représentant les Comptes sur lesquels sont effectuées des Transaction. " alt="" coords="141,756,286,951"/>
+<area shape="rect" id="node5" href="$class_compte_strategy.html" title="Classe abstraite, mère des classes StrategyAD et StrategyPR. " alt="" coords="226,1013,371,1149"/>
+<area shape="rect" id="node3" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="141,307,286,707"/>
+<area shape="rect" id="node4" href="$class_composite.html" title="Classe non instanciable mère de CompteRacine et CompteVirtuel. " alt="" coords="126,5,301,244"/>
+</map>
