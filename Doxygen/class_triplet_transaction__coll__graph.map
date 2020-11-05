@@ -1,0 +1,6 @@
+<map id="TripletTransaction" name="TripletTransaction">
+<area shape="rect" id="node2" href="$class_compte_feuille.html" title="Classe instanciable représentant les Comptes sur lesquels sont effectuées des Transaction. " alt="" coords="99,756,245,951"/>
+<area shape="rect" id="node5" href="$class_compte_strategy.html" title="Classe abstraite, mère des classes StrategyAD et StrategyPR. " alt="" coords="185,1043,330,1179"/>
+<area shape="rect" id="node3" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="99,307,245,707"/>
+<area shape="rect" id="node4" href="$class_composite.html" title="Classe non instanciable mère de CompteRacine et CompteVirtuel. " alt="" coords="85,5,259,244"/>
+</map>

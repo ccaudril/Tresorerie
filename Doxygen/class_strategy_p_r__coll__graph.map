@@ -1,0 +1,6 @@
+<map id="StrategyPR" name="StrategyPR">
+<area shape="rect" id="node2" href="$class_compte_strategy.html" title="Classe abstraite, mère des classes StrategyAD et StrategyPR. " alt="" coords="41,439,187,575"/>
+<area shape="rect" id="node3" href="$class_compte_feuille.html" title="Classe instanciable représentant les Comptes sur lesquels sont effectuées des Transaction. " alt="" coords="140,769,285,964"/>
+<area shape="rect" id="node4" href="$class_compte.html" title="Classe abstraite représentant un Compte. " alt="" coords="211,307,356,707"/>
+<area shape="rect" id="node5" href="$class_composite.html" title="Classe non instanciable mère de CompteRacine et CompteVirtuel. " alt="" coords="196,5,371,244"/>
+</map>
