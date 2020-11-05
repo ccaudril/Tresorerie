@@ -1,0 +1,288 @@
+@startuml
+
+title POOgnon : Diagramme de classes
+
+class CompteRacine <<Singleton>> {
+  - cheminFichier : string
+  - {static} handler : Handler
+  - CompteRacine() = default
+  - CompteRacine(const CompteRacine&) = default
+  - operator=(const CompteRacine&) : CompteRacine& = default
+  + getCheminFichier() const : const string&
+  + setCheminFichier(const string& chemin) : void
+  + maxId() : int
+  + {static} getCompteRacine() : CompteRacine&
+  + {static} libererCompteRacine() : void
+  + ~CompteRacine() : void
+}
+class CompteRacine::Handler {
+  + instance : CompteRacine*
+  + Handler()
+  + ~Handler()
+}
+CompteRacine::Handler --+ CompteRacine
+
+class Composite::iterator {
+  - iterator(list<Compte*>::iterator)
+  + operator*() const : Compte&
+  + operator->() const : Compte*
+}
+Composite::iterator --+ Composite
+class Composite::deepIterator {
+  + deepIterator() = default
+  + deepIterator(const deepIterator&)
+  + ~deepIterator()
+  + operator++(): deepIterator&
+  + operator++(int) : deepIterator&
+  + operator==(const deepIterator&) const : bool
+  + operator!=(const deepIterator&) const : bool
+  + operator*() const : Compte&
+}
+Composite::deepIterator --+ Composite
+Composite <|-- CompteRacine
+
+abstract class Compte <<abstract>>{
+  - identifiant : string
+  - nom : string
+  - solde : float
+  - soldeRap : float
+  - parent  : Composite*
+  - type : enum Type {A, P, D, R}
+  - dateRap : QDate
+  + Compte(const string& _identifiant, const string& _nom, const Type _type)
+  + Compte(const string& _identifiant, const string& _nom, CompteVirtuel* _parent)
+  + Compte(const Compte&)
+  + {abstract} ~Compte() = default
+  + operator=(const Compte&) : Compte&
+  + getNom() const : string
+  + getIdentifiant() const : string
+  + getSolde() const : float
+  + getSoldeRap() const : float
+  + getParent() const : Composite*
+  + getType() const : Type
+  + getDateRap() const : QDate
+  + getProfondeur() const : int
+  + {abstract} estVirtuel() const : bool = 0
+  + {abstract} supprimerCompte() : void = 0
+  - setSolde(const float&) : void
+  - setSoldeRap(const float&) : void
+  - setDateRap(QDate) : void
+}
+
+class Deficit <<Singleton>> {
+  - {static} instance : Deficit* = nullptr
+  - Deficit()
+  + {static} getDeficit() : Deficit&
+}
+Deficit  --|> CompteFeuille
+
+class Excedent <<Singleton>> {
+  - {static} instance : Excedent* = nullptr
+  - Excedent()
+  + {static} getExcedent() : Excedent&
+}
+Excedent  --|> CompteFeuille
+
+class Resultat <<Singleton>> {
+  - {static} instance : Resultat* = nullptr
+  - Resultat()
+  + {static} getResultat() : Resultat&
+}
+Resultat  --|> CompteFeuille
+
+class CompteStrategy <<abstract>>{
+  # compte : CompteFeuille*
+  + CompteStrategy = default
+  + CompteStrategy(CompteFeuille& c)
+  + {abstract} ~CompteStrategy = default
+  + {abstract} debiter() : void = 0
+  + {abstract} crediter() : void = 0
+}
+CompteFeuille o- CompteStrategy
+CompteFeuille -o CompteStrategy
+
+class StrategyAD{
+  + StrategyAD(CompteFeuille&)
+  + {abstract} debiter(float montant) override : void
+  + {abstract} crediter(float montant) override : void
+}
+StrategyAD --|> CompteStrategy
+
+class StrategyPR{
+  + StrategyPR(CompteFeuille&)
+  + {abstract} debiter(float montant) override : void
+  + {abstract} crediter(float montant) override : void
+}
+StrategyPR --|> CompteStrategy
+
+
+class CompteFeuille {
+  - strategy : CompteStrategy* = nullptr
+  + CompteFeuille(const string& identifiant, const string& nom, CompteVirtuel* parent)
+  + CompteFeuille (const string& identifiant, const sstring& nom, const Type type)
+  + ~CompteFeuille ()
+  + {abstract} estVirtuel() const override : bool
+  + {abstract} debiter(float montant) : void
+  + {abstract} crediter(float montant) : void
+  + {abstract} supprimerCompte() override : void
+  + opator==(const CompteFeuille&) const : bool
+}
+
+CompteFeuille --|> “Compte”
+
+abstract class Composite <<abstract>> {
+  # listeSousComptes : list<Compte*>
+  # Composite() = default
+  # Composite(const Composite&) = default
+  # {abstract} ~Composite()
+  # operator=(const Composite&) : Composite& = default
+  + ajouterSousCompte(Compte&) : void
+  + supprimerSousCompte(Compte&) : void
+  + getNbSousCompte() const : int
+  + dbegin() : deepIterator
+  + dend() : deepIterator
+  + begin() : iterator
+  + end() : iterator
+}
+
+Composite o- Compte : parent
+
+class CompteVirtuel {
+  - CompteVirtuel(const string& _identifiant, const string& _nom, const Type _type)
+  - CompteVirtuel(const string& _identifiant, const string& _nom, CompteVirtuel* _parent)
+  - CompteVirtuel(const CompteVirtuel&) = default
+  - {abstract} ~CompteVirtuel() = default
+  - operator=(const CompteVirtuel&) : CompteVirtuel&ZZZ= default
+  + {abstract} estVirtuel() const override : bool
+  + {abstract} supprimerCompte() const override : void
+}
+
+Composite <|- CompteVirtuel
+CompteVirtuel --|> Compte
+
+together {
+  class CompteFactory {
+    + CompteFactory() = default
+    + ~CompteFactory() = default
+    + CompteFactory(const CompteFactory&) = default
+    + operator=(const CompteFactory&) : CompteFactory& = default
+    + creerCompte(CompteVirtuel& parent, const string& nom, bool virtuel, float soldeInitial=0, CompteFeuille* passif=nullptr) : Compte&
+    + creerCompte(Type type, const string& nom, bool virtuel, float soldeInitial=0, CompteFeuille* passif=nullptr) : Compte&
+    - setSoldeInitial(CompteFeuille* compte, float montant, CompteFeuille* passif) : void
+    - creerCompte (const string& id, CompteVirtuel& parent, const string& nom, float solde_rap, QDate date_rap, bool virtuel) : Compte&
+    creerCompte (const string& id, Type type, const string& nom, float solde_rap, QDate date_rap, bool virtuel) : Compte&
+  }
+  class Transaction {
+    - date : QDate
+    - memo : string
+    - reference : string
+    - listeTriplets : list<TripletTransaction>
+    - rapproche : bool
+    - Transaction(const QDate& _date, const string& _memo, const string& _reference, list< TripletTransaction > _triplets, bool _rapproche=0)
+    + ~Transaction() = default
+    + Transaction(const Transaction&) = default
+    + operator=(const Transaction&) : Transaction& = default
+    + operator==(const Transaction&) : bool
+    + getMemo() const : string
+    + getReference() const : string
+    + getDate() : QDate
+    + getTriplets() : list<TripletTransaction>&
+    + getComptes() : list<reference_wrapper<CompteFeuille>>
+    + getRapproche() const : bool
+    + setRapproche() : void
+    + setMemo(const string&) : void
+    + setReference(const string&) : void
+    + modifierTransaction(const Qdate& date, const string& memo, const string& reference, const list<TripletTransaction>& triplets, bool rappoche = 0) : void
+    + possedeCompte(CompteFeuille&) : bool
+  }
+  CompteFactory -[hidden]> Transaction
+}
+
+class TripletTransaction {
+  - compte : CompteFeuille*
+  - debit : float
+  - credit : float
+  + TripletTransaction(CompteFeuille* compte, float debit, float credit)
+  + ~TripletTransaction() = default
+  + operator=(const TripletTransaction&) : TripletTransaction& = default
+  + operator==(const TripletTransaction&) const : bool
+  + operator<(const TripletTransaction&) const : bool
+  + getCompte() const : CompteFeuille&
+  + getDebit() const : float
+  + getCredit() const : float
+}
+
+Compte o- TripletTransaction : Concerne
+
+TripletTransaction "2..*" -- "1" Transaction : Possède
+
+
+class TransactionManager <<Singleton>> {
+  - listeTransactions : list<Transaction>
+  - {static} handler : Handler = TransactionManager::Handler()
+  - TransactionManager() = default;
+  - ~TransactionManager() = default
+  + {static} getTransactionManager() : TransactionManager&
+  + {static} libererTransactionManager() : void
+  + ajouterTransaction(const QDate& date, const string& memo, const string& ref, list<TripletTransaction>& triplets, bool rapproche=false) : void
+  + creerTransaction (const QDate& date, const string& memo, const string& ref, list< TripletTransaction >& triplets) : void
+  + supprimerTransaction(Transaction&) : void
+  + begin() : Iterator
+  + end() : Iterator
+  + cbegin() : ConstIterator
+  + cend() : ConstIterator
+  + fbegin(CompteFeuille&) : FilterIterator
+  + fend(CompteFeuille&) : FilterIterator
+}
+class TransactionManager::Handler {
+  + instance : TransactionManager*
+  + Handler()
+  + ~Handler()
+}
+TransactionManager::Handler --+ TransactionManager
+
+class TransactionManager::Iterator {
+  - courant : list<Transaction>::iterator
+  + Iterator() = default
+  + Iterator(list<Transaction>::iterator)
+  + Iterator(const Iterator&) = default
+  + ~Iterator() = default
+  + operator++(): Iterator&
+  + operator*() const : Transaction&
+  + operator!=(const Iterator&  it) const : bool
+  + operator==(const Iterator&  it) const : bool
+}
+TransactionManager::Iterator --+ TransactionManager
+
+class TransactionManager::ConstIterator {
+  - courant : list<Transaction>::const_iterator
+  + ConstIterator() = default
+  + ConstIterator(list<Transaction>::const_iterator)
+  + ConstIterator(const ConstIterator&) = default
+  + ~ConstIterator() = default
+  + operator++(): ConstIterator&
+  + operator*() const : Transaction&
+  + operator!=(const ConstIterator&  it) const : bool
+  + operator==(const ConstIterator&  it) const : bool
+}
+TransactionManager::ConstIterator --+ TransactionManager
+
+class TransactionManager::FilterIterator {
+  - CompteFeuille& compte
+  - courant : list<Transaction>::iterator
+  + FilterIterator(CompteFeuille& compte, list<Transaction>::iterator c)
+  + FilterIterator(const FilterIterator&) = default
+  + ~FilterIterator() = default
+  + operator++() : FilterIterator&
+  + operator*() const : Transaction&
+  + operator!=(const FilterIterator&  it) const : bool
+  + operator==(const FilterIterator&  it) const : bool
+}
+TransactionManager::FilterIterator --+ TransactionManager
+
+
+Transaction o- TransactionManager : Possède
+
+
+
+@enduml

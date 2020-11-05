@@ -1,0 +1,254 @@
+<Sauvegarde>
+ <Comptes>
+  <Compte parent="racine" virtuel="true" nom="Actifs" identifiant="1" type="A"/>
+  <Compte parent="1" virtuel="true" nom="BigBank" identifiant="2" type="A"/>
+  <Compte parent="2" virtuel="false" nom="Compte Cheque" identifiant="3" type="A"/>
+  <Compte parent="2" virtuel="false" nom="LivretA" identifiant="5" type="A"/>
+  <Compte parent="1" virtuel="false" nom="Caisse" identifiant="6" type="A"/>
+  <Compte parent="1" virtuel="false" nom="Cheques a encaisser" identifiant="7" type="A"/>
+  <Compte parent="racine" virtuel="false" nom="Capitaux Propres" identifiant="4" type="P"/>
+  <Compte parent="racine" virtuel="true" nom="Passifs" identifiant="8" type="P"/>
+  <Compte parent="8" virtuel="false" nom="Emprunts" identifiant="9" type="P"/>
+  <Compte parent="racine" virtuel="true" nom="Depenses" identifiant="10" type="D"/>
+  <Compte parent="10" virtuel="false" nom="Assurance" identifiant="12" type="D"/>
+  <Compte parent="10" virtuel="true" nom="Frais Bancaires" identifiant="13" type="D"/>
+  <Compte parent="13" virtuel="false" nom="Tenue de compte" identifiant="14" type="D"/>
+  <Compte parent="13" virtuel="false" nom="Interets d'emprunt" identifiant="15" type="D"/>
+  <Compte parent="10" virtuel="false" nom="Frais de personnel" identifiant="16" type="D"/>
+  <Compte parent="10" virtuel="false" nom="Materiel" identifiant="17" type="D"/>
+  <Compte parent="racine" virtuel="true" nom="Recettes" identifiant="11" type="R"/>
+  <Compte parent="11" virtuel="false" nom="Cotisations" identifiant="18" type="R"/>
+  <Compte parent="11" virtuel="false" nom="Dons" identifiant="19" type="R"/>
+  <Compte parent="11" virtuel="false" nom="Interets d'Epargne" identifiant="20" type="R"/>
+  <Compte parent="11" virtuel="false" nom="Subventions" identifiant="21" type="R"/>
+  <Compte parent="racine" virtuel="false" nom="Resultat" identifiant="C" type="P"/>
+  <Compte parent="racine" virtuel="false" nom="Excedent" identifiant="A" type="P"/>
+ </Comptes>
+ <Transactions>
+  <Transaction date="2020.05.11" reference="l1" memo="Solde initial">
+   <Triplet debit="0" compte="4" credit="1256.87"/>
+   <Triplet debit="1256.87" compte="3" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.11" reference="l2" memo="Solde initial">
+   <Triplet debit="0" compte="4" credit="3697.7"/>
+   <Triplet debit="3697.7" compte="5" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.11" reference="l3" memo="Solde initial">
+   <Triplet debit="0" compte="4" credit="168.3"/>
+   <Triplet debit="168.3" compte="6" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.11" reference="l4" memo="Solde initial">
+   <Triplet debit="0" compte="4" credit="70"/>
+   <Triplet debit="70" compte="7" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.11" reference="l5" memo="Solde initial">
+   <Triplet debit="1200" compte="4" credit="0"/>
+   <Triplet debit="0" compte="9" credit="1200"/>
+  </Transaction>
+  <Transaction date="2020.05.11" reference="Aj1" memo="Placement">
+   <Triplet debit="0" compte="3" credit="650"/>
+   <Triplet debit="650" compte="5" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.12" reference="D1" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.20" reference="Aut5" memo="Depot de cheques">
+   <Triplet debit="70" compte="3" credit="0"/>
+   <Triplet debit="0" compte="7" credit="70"/>
+  </Transaction>
+  <Transaction date="2020.05.25" reference="Rmb1" memo="Remboursement de pret">
+   <Triplet debit="0" compte="3" credit="205"/>
+   <Triplet debit="200" compte="9" credit="0"/>
+   <Triplet debit="5" compte="15" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.05.25" reference="Don1" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.05.28" reference="S1" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.06.12" reference="D2" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.06.20" reference="Aj2" memo="Ajustement">
+   <Triplet debit="600" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="600"/>
+  </Transaction>
+  <Transaction date="2020.06.25" reference="Rmb2" memo="Remboursement de pret">
+   <Triplet debit="0" compte="3" credit="205"/>
+   <Triplet debit="200" compte="9" credit="0"/>
+   <Triplet debit="5" compte="15" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.06.25" reference="Don2" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.06.28" reference="S2" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.07.12" reference="D3" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.07.20" reference="Aj3" memo="Ajustement">
+   <Triplet debit="550" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="550"/>
+  </Transaction>
+  <Transaction date="2020.07.25" reference="Rmb3" memo="Remboursement de pret">
+   <Triplet debit="0" compte="3" credit="205"/>
+   <Triplet debit="200" compte="9" credit="0"/>
+   <Triplet debit="5" compte="15" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.07.25" reference="Don3" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.07.28" reference="S3" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.08.12" reference="D4" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.08.20" reference="Aj4" memo="Ajustement">
+   <Triplet debit="600" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="600"/>
+  </Transaction>
+  <Transaction date="2020.08.25" reference="Rmb4" memo="Remboursement de pret">
+   <Triplet debit="0" compte="3" credit="205"/>
+   <Triplet debit="200" compte="9" credit="0"/>
+   <Triplet debit="5" compte="15" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.08.25" reference="Don4" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.08.28" reference="S4" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.09.12" reference="D5" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.09.15" reference="Aj5" memo="Ajustement">
+   <Triplet debit="160" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="160"/>
+  </Transaction>
+  <Transaction date="2020.09.20" reference="Aut3" memo="Cotisations">
+   <Triplet debit="1000" compte="3" credit="0"/>
+   <Triplet debit="0" compte="18" credit="1000"/>
+  </Transaction>
+  <Transaction date="2020.09.25" reference="Rmb5" memo="Remboursement de pret">
+   <Triplet debit="0" compte="3" credit="205"/>
+   <Triplet debit="200" compte="9" credit="0"/>
+   <Triplet debit="5" compte="15" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.09.25" reference="Don5" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.09.28" reference="S5" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.09.30" reference="Aj6" memo="Ajustement">
+   <Triplet debit="100" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="100"/>
+  </Transaction>
+  <Transaction date="2020.10.12" reference="D6" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.10.20" reference="Aj7" memo="Ajustement">
+   <Triplet debit="600" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="600"/>
+  </Transaction>
+  <Transaction date="2020.10.25" reference="Rmb6" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="205"/>
+   <Triplet debit="200" compte="9" credit="0"/>
+   <Triplet debit="5" compte="15" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.10.25" reference="Don6" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.10.28" reference="S6" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.11.12" reference="D7" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.11.20" reference="Aj8" memo="Ajustement">
+   <Triplet debit="350" compte="3" credit="0"/>
+   <Triplet debit="0" compte="5" credit="350"/>
+  </Transaction>
+  <Transaction date="2020.11.25" reference="Don7" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.11.28" reference="S7" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.12.01" reference="Aut4" memo="Subvention">
+   <Triplet debit="3000" compte="3" credit="0"/>
+   <Triplet debit="0" compte="21" credit="3000"/>
+  </Transaction>
+  <Transaction date="2020.12.02" reference="Aj9" memo="Placement">
+   <Triplet debit="0" compte="3" credit="2500"/>
+   <Triplet debit="2500" compte="5" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.12.12" reference="D8" memo="Frais de banque">
+   <Triplet debit="0" compte="3" credit="3"/>
+   <Triplet debit="3" compte="14" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.12.25" reference="Don8" memo="Dons">
+   <Triplet debit="30" compte="3" credit="0"/>
+   <Triplet debit="0" compte="19" credit="30"/>
+  </Transaction>
+  <Transaction date="2020.12.25" reference="Liv1" memo="Interets 2020">
+   <Triplet debit="20" compte="5" credit="0"/>
+   <Triplet debit="0" compte="20" credit="20"/>
+  </Transaction>
+  <Transaction date="2020.12.28" reference="S8" memo="Salaire">
+   <Triplet debit="0" compte="3" credit="400"/>
+   <Triplet debit="400" compte="16" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.12.28" reference="Aut1" memo="Materiel">
+   <Triplet debit="0" compte="3" credit="200"/>
+   <Triplet debit="200" compte="17" credit="0"/>
+  </Transaction>
+  <Transaction date="2020.12.28" reference="Aut2" memo="Assurance">
+   <Triplet debit="0" compte="3" credit="500"/>
+   <Triplet debit="500" compte="12" credit="0"/>
+  </Transaction>
+  <Transaction date="2021.01.01" reference="CL2020D" memo="Cloture 2020">
+   <Triplet debit="0" compte="12" credit="500"/>
+   <Triplet debit="0" compte="14" credit="24"/>
+   <Triplet debit="0" compte="15" credit="30"/>
+   <Triplet debit="0" compte="16" credit="3200"/>
+   <Triplet debit="0" compte="17" credit="200"/>
+   <Triplet debit="3954" compte="C" credit="0"/>
+  </Transaction>
+  <Transaction date="2021.01.01" reference="CL2020R" memo="Cloture 2020">
+   <Triplet debit="1000" compte="18" credit="0"/>
+   <Triplet debit="240" compte="19" credit="0"/>
+   <Triplet debit="20" compte="20" credit="0"/>
+   <Triplet debit="3000" compte="21" credit="0"/>
+   <Triplet debit="0" compte="C" credit="4260"/>
+  </Transaction>
+  <Transaction date="2021.01.01" reference="CL2020E" memo="Cloture 2020">
+   <Triplet debit="306" compte="C" credit="0"/>
+   <Triplet debit="0" compte="A" credit="306"/>
+  </Transaction>
+ </Transactions>
+</Sauvegarde>
