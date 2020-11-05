@@ -1,0 +1,4 @@
+<map id="CompteRacine::Handler" name="CompteRacine::Handler">
+<area shape="rect" id="node2" href="$class_compte_racine.html" title="Singleton du compte racine. " alt="" coords="86,307,250,487"/>
+<area shape="rect" id="node3" href="$class_composite.html" title="Classe non instanciable mère de CompteRacine et CompteVirtuel. " alt="" coords="193,5,367,244"/>
+</map>
